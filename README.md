@@ -1,4 +1,4 @@
-aria
+Aria
 ====
 
-experimental music project
+This is an experimental music project where sound files are generated.
