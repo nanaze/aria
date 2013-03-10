@@ -19,5 +19,17 @@ class TransformsCase(unittest.TestCase):
     mapped_func = transforms.map_amplitude(wave_func, negate_func)
     self.assertEqual(-1, mapped_func(1))
 
+  def testMapRate(self):
+    wave_func = lambda t: t
+    mult_func = lambda t: t * 100 # speed up 100 time
+    mapped_func = transforms.map_rate(wave_func, mult_func)
+    self.assertEqual(100, mapped_func(1))
+
+  def testScaleRate(self):
+    wave_func = lambda t: t
+    mapped_func = transforms.scale_rate(wave_func, 50)
+    self.assertEqual(50, mapped_func(1))
+    
+
 if __name__ == '__main__':
     unittest.main()
